@@ -244,6 +244,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   faker
+  haml
   haml-rails (~> 2.0)
   jbuilder (~> 2.7)
   listen (~> 3.3)

@@ -61,4 +61,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # To generate fake random data 
 gem 'faker'
 # HAML to enable Haml as the templating engine in the app
+gem 'haml'
 gem "haml-rails", "~> 2.0"
