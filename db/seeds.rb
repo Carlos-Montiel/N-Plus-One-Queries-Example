@@ -25,3 +25,19 @@ CSV.foreach(Rails.root.join('db/seeds/zip_codes.csv'), headers: true) do |row|
     zip_code.name = row[1]
   end
 end
+
+puts 'Importing first owners and restaurants...'
+3.times do
+  owner = Owner.create!(name: Faker::Name.unique.name, phone: Faker::PhoneNumber.unique.phone_number)
+
+  3.times do
+    zip_code = ZipCode.find(ZipCode.ids.sample)
+    Restaurant.create do |restaurant|
+      restaurant.owner = owner
+      restaurant.name = Faker::Restaurant.unique.name
+      restaurant.restaurant_type = Faker::Restaurant.unique.type
+      restaurant.description = Faker::Restaurant.unique.description
+      restaurant.zip_code = zip_code
+    end
+  end
+end
