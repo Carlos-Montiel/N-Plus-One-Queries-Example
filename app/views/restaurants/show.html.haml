@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Owner:
+  = @restaurant.owner.name
+%p
+  %b Name:
+  = @restaurant.name
+%p
+  %b Restaurant type:
+  = @restaurant.restaurant_type
+%p
+  %b Description:
+  = @restaurant.description
+%p
+  %b State:
+  = @restaurant.zip_code.municipality.state.name
+%p
+  %b Zip code:
+  = @restaurant.zip_code.municipality.name
+%p
+  %b Zip code:
+  = @restaurant.zip_code.name
+
+= link_to 'Edit', edit_restaurant_path(@restaurant)
+\|
+= link_to 'Back', restaurants_path

@@ -1,0 +1,33 @@
+%h1 Listing restaurants
+
+%table
+  %thead
+    %tr
+      %th Owner
+      %th Name
+      %th Restaurant type
+      %th Description
+      %th State
+      %th Municipality
+      %th Zip code
+      %th
+      %th
+      %th
+
+  %tbody
+    - @restaurants.each do |restaurant|
+      %tr
+        %td= restaurant.owner.name
+        %td= restaurant.name
+        %td= restaurant.restaurant_type
+        %td= restaurant.description
+        %td= restaurant.zip_code.municipality.state.name
+        %td= restaurant.zip_code.municipality.name
+        %td= restaurant.zip_code.name
+        %td= link_to 'Show', restaurant
+        %td= link_to 'Edit', edit_restaurant_path(restaurant)
+        %td= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Restaurant', new_restaurant_path

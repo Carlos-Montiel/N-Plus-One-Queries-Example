@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'owners/index', type: :view do
@@ -14,7 +16,7 @@ RSpec.describe 'owners/index', type: :view do
            ])
   end
 
-  it 'renders a list of owner names' do
+  it 'renders a list of owners names' do
     render
     assert_select 'tr>td', text: 'Jhon'.to_s, count: 1
     assert_select 'tr>td', text: 'Peter'.to_s, count: 1

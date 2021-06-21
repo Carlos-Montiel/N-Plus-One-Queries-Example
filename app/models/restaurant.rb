@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-class Owner < ApplicationRecord
+class Restaurant < ApplicationRecord
   validates :name, uniqueness: true, presence: true
-  has_many :restaurants, dependent: :destroy
+  belongs_to :owner
+  belongs_to :zip_code
 end
